@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 20-Jun-2017 às 14:45
+-- Generation Time: 21-Jun-2017 às 03:26
 -- Versão do servidor: 5.5.55-0ubuntu0.14.04.1
 -- PHP Version: 7.1.6-2~ubuntu14.04.1+deb.sury.org+1
 
@@ -29,9 +29,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `clientes` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) DEFAULT '0',
+  `telefone` varchar(15) DEFAULT '0',
+  `email` varchar(200) DEFAULT '0',
   `cpf` varchar(15) DEFAULT '0',
   `usuario_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `nome`, `telefone`, `email`, `cpf`, `usuario_id`) VALUES
+(1, 'Júnior Martins', '96562348', 'junior@email.com', '11122233355', 1),
+(2, 'Leonardo Vilarinho', '32661512', 'leo@email.com', '33333333333', 2);
 
 -- --------------------------------------------------------
 
@@ -41,7 +51,7 @@ CREATE TABLE `clientes` (
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `email` varchar(50) DEFAULT '0',
+  `usuario` varchar(50) DEFAULT '0',
   `senha` varchar(50) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -49,9 +59,9 @@ CREATE TABLE `usuarios` (
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `email`, `senha`) VALUES
-(1, 'juniorm2488@gmail.com', '123456'),
-(2, 'leonardo@gmail.com', '987654');
+INSERT INTO `usuarios` (`id`, `usuario`, `senha`) VALUES
+(1, 'admin', 'admin123'),
+(2, 'usuario', 'usuario123');
 
 --
 -- Indexes for dumped tables
@@ -79,7 +89,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
