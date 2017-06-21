@@ -1,0 +1,15 @@
+{
+    "name": "grupo01/invasao",
+    "description": "Grupo 01 trabalho de invasão",
+    "type": "site",
+    "license": "MITS",
+    "authors": [
+        {
+            "name": "Leonardo Vilarinho",
+            "email": "leonardo-s@outlook.com"
+        }
+    ],
+    "autoload": {
+	"classmap": ["src"]
+    }
+}
