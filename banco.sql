@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 21-Jun-2017 às 03:26
+-- Generation Time: 22-Jun-2017 às 15:28
 -- Versão do servidor: 5.5.55-0ubuntu0.14.04.1
 -- PHP Version: 7.1.6-2~ubuntu14.04.1+deb.sury.org+1
 
@@ -40,8 +40,10 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `nome`, `telefone`, `email`, `cpf`, `usuario_id`) VALUES
-(1, 'Júnior Martins', '96562348', 'junior@email.com', '11122233355', 1),
-(2, 'Leonardo Vilarinho', '32661512', 'leo@email.com', '33333333333', 2);
+(9, 'Júnior Martins', '32661512', 'junior@emailcom', '12345678952', 15),
+(10, 'Leonardo Vilarinho', '32663266', 'leonardo@email.com', '98765432151', 17),
+(11, 'Guilherem Mamedio', '98657845', 'guilherme@email.com', '55566644485', 16),
+(12, 'Margarido Netto', '78931248', 'neto@email.com', '78965415988', 18);
 
 -- --------------------------------------------------------
 
@@ -60,8 +62,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `senha`) VALUES
-(1, 'admin', 'admin123'),
-(2, 'usuario', 'usuario123');
+(15, 'admin', 'admin'),
+(16, 'prof', 'prof123'),
+(17, 'invasao', '12345678'),
+(18, 'test', '12345678');
 
 --
 -- Indexes for dumped tables
@@ -89,12 +93,12 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- Constraints for dumped tables
 --
