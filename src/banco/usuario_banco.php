@@ -6,8 +6,6 @@ class UsuarioBanco
 	{
 		include __DIR__.'/conexao.php';
 
-		$banco = self::banco();
-
 		$execucao = $banco->prepare('SELECT * FROM usuarios WHERE usuario = ? AND senha = ?');
 
 		$execucao->bind_param('ss', $usuario['usuario'], $usuario['senha']);
