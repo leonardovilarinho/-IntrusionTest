@@ -1,4 +1,4 @@
-<?php session_start(); session_destroy(); var_dump($_SERVER['MYSQLCONNSTR_localdb']); ?>
+<?php session_start(); session_destroy(); ?>
 
 <!DOCTYPE html>
 <html>
