@@ -18,6 +18,7 @@ class UsuarioBanco
 
 		$usuario = $consulta->fetch_assoc();
 
+		session_start();
 		$_SESSION['usuario'] = $usuario;
 
 		return $consulta->num_rows > 0;
