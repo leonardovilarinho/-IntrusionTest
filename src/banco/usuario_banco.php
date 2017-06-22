@@ -6,12 +6,22 @@ class UsuarioBanco
 	{
 		include __DIR__.'/conexao.php';
 
-		$usuario_query = implode('","', $usuario);
+		$banco = self::banco();
 
-		$execucao = $banco->query('SELECT * FROM usuarios WHERE usuario = "'.$usuario['usuario'].'" AND senha = "'. $usuario['senha'].'"');
+		$execucao = $banco->prepare('SELECT * FROM usuarios WHERE usuario = ? AND senha = ?');
 
-		$usuario = $execucao->fetch_assoc();
+		$execucao->bind_param('ss', $usuario['usuario'], $usuario['senha']);
+		$execucao->execute();
 
-		return $execucao->num_rows > 0 ? $usuario['id'] : False;
+		$consulta = $execucao->get_result();
+
+		if(!$consulta)
+			return false;
+
+		$usuario = $consulta->fetch_assoc();
+
+		$_SESSION['usuario'] = $usuario;
+
+		return $consulta->num_rows > 0;
 	}
 }
