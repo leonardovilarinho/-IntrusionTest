@@ -1,6 +1,10 @@
 <?php
+	session_start();
 	require_once __DIR__.'/vendor/autoload.php';
-	$cliente = Cliente::listar($_GET['usuario_id']);
+	if(!isset($_SESSION['usuario']))
+		header('Location:./erro.php');
+
+	$cliente = Cliente::listar($_SESSION['usuario']['id']);
  ?>
 
 <!DOCTYPE html>
